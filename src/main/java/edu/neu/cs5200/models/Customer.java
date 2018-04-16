@@ -22,7 +22,10 @@ public class Customer extends Person implements Serializable {
     }
 
     public void setMangerForCustomers(List<PortfolioManager> mangerForCustomers) {
-        MangerForCustomers = mangerForCustomers;
+        this.MangerForCustomers = mangerForCustomers;
+        for (PortfolioManager portfolioManager : mangerForCustomers) {
+            portfolioManager.getCustomersOfPortfolioManager().add(this);
+        }
     }
 
     @ManyToMany(mappedBy="customerOwned", cascade=CascadeType.ALL)
@@ -77,4 +80,10 @@ public class Customer extends Person implements Serializable {
         this.created = created;
     }
 
+    public void assignPortfolioManager(PortfolioManager portfolioManager) {
+        this.MangerForCustomers.add(portfolioManager);
+        if (!portfolioManager.getCustomersOfPortfolioManager().contains(this)) {
+            portfolioManager.getCustomersOfPortfolioManager().add(this);
+        }
+    }
 }

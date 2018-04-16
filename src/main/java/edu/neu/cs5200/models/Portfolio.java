@@ -67,4 +67,9 @@ public class Portfolio implements Serializable {
     }
 
 
+    public void set(Portfolio newPortfolio) {
+        this.name = newPortfolio.name!=null ? newPortfolio.name : this.name;
+        this.portfolioManager = newPortfolio.portfolioManager!=null ? newPortfolio.portfolioManager : this.portfolioManager;
+        this.cryptos = newPortfolio.cryptos!=null ? newPortfolio.cryptos : this.cryptos;
+    }
 }

@@ -25,6 +25,9 @@ public class PortfolioManager extends Person implements Serializable {
 
     public void setCustomersOfPortfolioManager(List<Customer> customersOfPortfolioManager) {
         this.customersOfPortfolioManager = customersOfPortfolioManager;
+        for (Customer customer : customersOfPortfolioManager) {
+            customer.getMangerForCustomers().add(this);
+        }
     }
 
     private static final long serialVersionUID = 1L;
@@ -42,5 +45,12 @@ public class PortfolioManager extends Person implements Serializable {
 
     public PortfolioManager(List<Portfolio> portfolios) {
         this.portfolios = portfolios;
+    }
+
+    public void assignCustomer(Customer customer) {
+        this.customersOfPortfolioManager.add(customer);
+        if (customer.getMangerForCustomers().contains(this)) {
+            customer.getMangerForCustomers().add(this);
+        }
     }
 }

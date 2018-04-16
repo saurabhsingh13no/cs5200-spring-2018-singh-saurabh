@@ -1,7 +1,9 @@
 package edu.neu.cs5200.service;
 
 import edu.neu.cs5200.models.Customer;
+import edu.neu.cs5200.models.PortfolioManager;
 import edu.neu.cs5200.repository.CustomerRepository;
+import edu.neu.cs5200.repository.PortfolioManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,9 @@ public class CustomerService {
 
     @Autowired
     CustomerRepository customerRepository;
+
+    @Autowired
+    PortfolioManagerRepository portfolioManagerRepository;
 
     @GetMapping("/api/customer")
     public List<Customer> findAllCustomers(
@@ -60,6 +65,15 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
+    @PostMapping("/api/customer/{cId}/portfolioManager/{pmId}")
+    public void assignPortfolioManagerToCustomer(
+            @PathVariable("cId") int cId,
+            @PathVariable("pmId") int pmId) {
+        Customer customer = customerRepository.findById(cId).orElse(null);
+        PortfolioManager portfolioManager = portfolioManagerRepository.findById(pmId).orElse(null);
+        customer.assignPortfolioManager(portfolioManager);
+        customerRepository.save(customer);
+    }
 
 
 
