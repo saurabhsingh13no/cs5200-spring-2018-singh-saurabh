@@ -13,7 +13,7 @@ public class Customer extends Person implements Serializable {
 
     private Date created;
 
-    @ManyToMany(mappedBy="customersOfPortFolioManager", cascade=CascadeType.ALL)
+    @ManyToMany(mappedBy="customersOfPortfolioManager", cascade=CascadeType.ALL)
     @JsonIgnore
     private List<PortfolioManager> MangerForCustomers;
 

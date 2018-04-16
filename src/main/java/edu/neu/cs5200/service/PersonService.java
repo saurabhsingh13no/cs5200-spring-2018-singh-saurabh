@@ -29,9 +29,15 @@ public class PersonService {
     }
 
     @DeleteMapping("/api/person/{personId}")
-    public void deletePerson
+    public void deletePersonById
             (@PathVariable("personId") int id) {
         personRepository.deleteById(id);
+    }
+
+
+    @DeleteMapping("/api/person")
+    public void deletePerson() {
+       personRepository.deleteAll();
     }
 
     @PutMapping("/api/person/{personId}")

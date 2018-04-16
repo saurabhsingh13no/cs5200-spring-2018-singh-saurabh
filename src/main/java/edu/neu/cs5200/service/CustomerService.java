@@ -39,9 +39,14 @@ public class CustomerService {
     }
 
     @DeleteMapping("/api/customer/{customerId}")
-    public void deleteCustomer
+    public void deleteCustomerById
             (@PathVariable("customerId") int id) {
         customerRepository.deleteById(id);
+    }
+
+    @DeleteMapping("/api/customer")
+    public void deleteCustomer() {
+        customerRepository.deleteAll();
     }
 
     @PutMapping("/api/customer/{customerId}")

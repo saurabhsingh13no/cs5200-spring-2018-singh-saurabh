@@ -17,14 +17,14 @@ public class PortfolioManager extends Person implements Serializable {
     @ManyToMany
     @JoinTable(name="hire")
     @JsonIgnore
-    private List<Customer> customersOfPortFolioManager;
+    private List<Customer> customersOfPortfolioManager;
 
-    public List<Customer> getCustomersOfPortFolioManager() {
-        return customersOfPortFolioManager;
+    public List<Customer> getCustomersOfPortfolioManager() {
+        return customersOfPortfolioManager;
     }
 
-    public void setCustomersOfPortFolioManager(List<Customer> customersOfPortFolioManager) {
-        this.customersOfPortFolioManager = customersOfPortFolioManager;
+    public void setCustomersOfPortfolioManager(List<Customer> customersOfPortfolioManager) {
+        this.customersOfPortfolioManager = customersOfPortfolioManager;
     }
 
     private static final long serialVersionUID = 1L;
