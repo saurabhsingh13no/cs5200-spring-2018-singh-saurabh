@@ -1,0 +1,14 @@
+INSERT INTO `crypto`.`person`
+(`email`,
+`first_name`,
+`last_name`,
+`password`,
+`phone`,
+`username`)
+VALUES
+("alice@gmail.com",
+"Alice",
+"Wonderland",
+"alice",
+"8574158710",
+"alice");

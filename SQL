@@ -1,0 +1,14 @@
+Hibernate: create table cryptocurrency (id integer not null auto_increment, change24h float not null, circulating_supply integer not null, circulating_supply_base varchar(255), market_cap integer not null, name varchar(255), price_inusd float not null, volume24h integer not null, portfolio_owned_id integer, primary key (id)) engine=InnoDB
+Hibernate: create table customer (created datetime, id integer not null, primary key (id)) engine=InnoDB
+Hibernate: create table hire (manger_for_customers_id integer not null, customers_of_port_folio_manager_id integer not null) engine=InnoDB
+Hibernate: create table own (cryptos_owned_id integer not null, customer_owned_id integer not null) engine=InnoDB
+Hibernate: create table person (id integer not null auto_increment, dob datetime, email varchar(255), first_name varchar(255), last_name varchar(255), password varchar(255), phone varchar(255), username varchar(255), primary key (id)) engine=InnoDB
+Hibernate: create table portfolio (id integer not null auto_increment, name varchar(255), portfolio_manager_id integer, primary key (id)) engine=InnoDB
+Hibernate: create table portfolio_manager (id integer not null, primary key (id)) engine=InnoDB
+Hibernate: alter table cryptocurrency add constraint FKj0r2rnafhvmmijetjgj3dgwek foreign key (portfolio_owned_id) references portfolio (id)
+Hibernate: alter table customer add constraint FKr9okrktxscw3omxi1wm7cg18u foreign key (id) references person (id)
+Hibernate: alter table hire add constraint FKh1uusuycj8qnj5mrrvf00t67n foreign key (customers_of_port_folio_manager_id) references customer (id)
+Hibernate: alter table hire add constraint FKh6uy3jfifqd9f02uqphs1e2k4 foreign key (manger_for_customers_id) references portfolio_manager (id)
+Hibernate: alter table own add constraint FKs72uc1bumvnyon45aon970da3 foreign key (customer_owned_id) references customer (id)
+Hibernate: alter table own add constraint FKkso1pw9il25fqvaudc2iki67j foreign key (cryptos_owned_id) references cryptocurrency (id)
+Hibernate: alter table portfolio add constraint FKfd8hiq8vjkn1gsj9mr9hoi3d5 foreign key (portfolio_manager_id) references portfolio_manager (id)
