@@ -56,6 +56,7 @@ public class Customer extends Person implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public Customer() {
+        super();
     }
 
     public Customer(Date created) {
