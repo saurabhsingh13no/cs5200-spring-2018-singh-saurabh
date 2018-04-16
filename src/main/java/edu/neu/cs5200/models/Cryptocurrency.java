@@ -13,12 +13,12 @@ public class Cryptocurrency implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String name;
-    private float priceInUSD;
-    private int marketCap;
-    private int volume24h;
-    private int circulatingSupply;
+    private float priceInUSD=0;
+    private int marketCap=0;
+    private int volume24h=0;
+    private int circulatingSupply=0;
     private String circulatingSupplyBase;
-    private float change24h;
+    private float change24h=0;
 
     @ManyToOne
     @JsonIgnore
@@ -51,7 +51,11 @@ public class Cryptocurrency implements Serializable {
     }
 
     public void setCustomerOwned(List<Customer> customerOwned) {
+
         this.customerOwned = customerOwned;
+        for (Customer customer : customerOwned) {
+            customer.getCryptosOwned().add(this);
+        }
     }
 
 //    public List<Customer> getCustomerComments() {
@@ -126,5 +130,17 @@ public class Cryptocurrency implements Serializable {
 
     public void setChange24h(float change24h) {
         this.change24h = change24h;
+    }
+
+    public void set(Cryptocurrency newCryptocurrency) {
+        this.name = newCryptocurrency.name!=null ? newCryptocurrency.name : this.name;
+        this.priceInUSD = newCryptocurrency.priceInUSD==0 ? newCryptocurrency.priceInUSD : this.priceInUSD;
+        this.marketCap = newCryptocurrency.marketCap==0? newCryptocurrency.marketCap : this.marketCap;
+        this.volume24h = newCryptocurrency.volume24h==0?newCryptocurrency.volume24h : this.volume24h;
+        this.circulatingSupply = newCryptocurrency.circulatingSupply==0?newCryptocurrency.circulatingSupply : this.circulatingSupply;
+        this.circulatingSupplyBase =  newCryptocurrency.circulatingSupplyBase!=null ? newCryptocurrency.circulatingSupplyBase : this.circulatingSupplyBase;
+        this.change24h  = newCryptocurrency.change24h==0? newCryptocurrency.change24h : this.change24h;
+
+
     }
 }

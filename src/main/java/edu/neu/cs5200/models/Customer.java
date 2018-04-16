@@ -42,7 +42,11 @@ public class Customer extends Person implements Serializable {
     }
 
     public void setCryptosOwned(List<Cryptocurrency> cryptosOwned) {
+
         this.cryptosOwned = cryptosOwned;
+        for (Cryptocurrency cryptocurrency : cryptosOwned) {
+            cryptocurrency.getCustomerOwned().add(this);
+        }
     }
 
 //    public List<Cryptocurrency> getCryptosCommented() {
