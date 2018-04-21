@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="templates/css/bootstrap_local.css" rel="stylesheet"/>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" ></script>
+
     <title>Displaying all Cryptos prices</title>
 </head>
 <body>
     <div class="container">
-        <h2>Search</h2>
-        <label>Cryptocurrency</label>
+        <!--<h2>Search</h2>-->
         <table class="table table-hover">
             <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">price</th>
+                <th scope="col">Market Cap</th>
+                <th scope=""col>Price</th>
+                <!--<th scope=""col>Volume(24h)</th>-->
+                <th scope=""col>Circulating Supply</th>
+                <th scope=""col>Change(24h)</th>
             </tr>
             </thead>
             <tbody ng-repeat="(index, crypto) in allCryptos">
-            <th>{{index+1}}</th>
-            <th>{{crypto.id}}</th>
-            <th>{{crypto.price_usd}}</th>
-
+            <td>{{index+1}}</td>
+            <td>{{crypto.id}}</td>
+            <td>{{crypto.market_cap_usd}}</td>
+            <td>{{crypto.price_usd}}</td>
+            <!--<td>{{crypto.24h_volume_usd}}</td>-->
+            <td>{{crypto.available_supply}}</td>
+            <td>{{crypto.percent_change_24h}}</td>
             </tbody>
         </table>
         </div>

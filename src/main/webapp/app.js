@@ -25,7 +25,8 @@
                 templateUrl: 'templates/details/details.html',
                 controller: 'CryptoDetailsController',
                 controllerAs : 'model'
-            });
+            })
+            .otherwise({redirectTo:'/'});
     }
     
 })();

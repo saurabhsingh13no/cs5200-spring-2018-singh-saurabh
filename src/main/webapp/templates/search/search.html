@@ -10,10 +10,13 @@
     <div class="container">
         <h2>Search</h2>
         <label>Cryptocurrency</label>
-        <input  class="form-control" ng-model="cryptoId"/>
-        <button class="btn btn-primary" ng-click="model.search(cryptoId)">Search</button>
-        {{hello}}
-        <table class="table">
+        <form class="form-inline my-2 my-lg-0">
+            <label> </label>
+            <input  class="form-control" ng-model="cryptoId"/>
+            <button class="btn btn-primary" ng-click="model.search(cryptoId)">Search</button>
+            <label> </label>
+        </form>
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -22,10 +25,9 @@
                 </tr>
             </thead>
             <tbody ng-repeat="(index, crypto) in allCryptos">
-                <th>{{index+1}}</th>
-                <th>{{crypto.id}}</th>
-                <th>{{crypto.price_usd}}</th>
-
+                <td>{{index+1}}</td>
+                <td>{{crypto.id}}</td>
+                <td>{{crypto.price_usd}}</td>
             </tbody>
         </table>
     </div>
