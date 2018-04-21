@@ -10,7 +10,7 @@
         function init() {
             $location.url("/displayAll/")
         }
-        init();
+        // init();
 
         function search(cryptoId) {
             $location.url("/search/")

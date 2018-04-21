@@ -30,6 +30,10 @@
 
         }
 
+        // onSignUpClick() {
+        //     $location.url('/bsdhcb');
+        // }
+
     }
 
 })();
