@@ -37,14 +37,10 @@
         </li>
     </div>
 </nav>
-<div class="container-fluid">
-    <h4 class="text-center">Top 100 Cryptocurrencies by Market Capitalization</h4>
-    <a href="#!search">Search</a>
-    <a href="#!details">Details</a>
-</div>
+
 <div class="container">
     <!--<h2>Search</h2>-->
-    <table class="table table-hover">
+    <table class="table table-hover invisible">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -66,5 +62,27 @@
         <td>{{crypto.percent_change_24h}}</td>
         </tbody>
     </table>
-    </div>
 </div>
+
+
+
+<!--<body class="text-center">-->
+<div class="align-content-md-center">
+    <form class="form-signin">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
+        <div class="checkbox mb-3">
+            <label>
+                <input value="remember-me" type="checkbox"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+</div>
+
+
+<!--</body>-->
