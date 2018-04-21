@@ -14,8 +14,7 @@
                 // xhr.send();
                 // console.log(xhr.response.data)
 
-                // $http.get('https://api.coinmarketcap.com/v1/ticker/'+cryptoId+"/").
-                $http.get('https://api.coinmarketcap.com/v1/ticker/').
+                $http.get('https://api.coinmarketcap.com/v1/ticker/'+cryptoId+"/").
                 then(function(response) {
                     console.log(response.data);
                     $scope.allCryptos = response.data;
