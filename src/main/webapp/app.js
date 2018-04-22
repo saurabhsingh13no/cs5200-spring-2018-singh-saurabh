@@ -63,7 +63,17 @@
             })
             .when('/adminHome/:id', {
                 templateUrl: 'templates/adminHome/adminHome.html',
-                controller : 'CryptoAdminHomeController',
+                controller: 'CryptoAdminHomeController',
+                controllerAs: 'model'
+            })
+            .when('/editUser/:id', {
+                templateUrl: 'templates/editUser/editUser.html',
+                controller: 'CryptoEditUserController',
+                controllerAs: 'model'
+            })
+            .when('/createNewUser', {
+                templateUrl:'templates/createNewUser/createNewUser.html',
+                controller: 'CryptoCreateNewUserController',
                 controllerAs:'model'
 
         });

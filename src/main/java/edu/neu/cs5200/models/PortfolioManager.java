@@ -4,11 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @DiscriminatorValue("manager")
 public class PortfolioManager extends Person implements Serializable {
+
+    private Date created;
 
     @OneToMany(mappedBy="portfolioManager", cascade=CascadeType.ALL)
     @JsonIgnore
@@ -28,6 +31,14 @@ public class PortfolioManager extends Person implements Serializable {
         for (Customer customer : customersOfPortfolioManager) {
             customer.getMangerForCustomers().add(this);
         }
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     private static final long serialVersionUID = 1L;

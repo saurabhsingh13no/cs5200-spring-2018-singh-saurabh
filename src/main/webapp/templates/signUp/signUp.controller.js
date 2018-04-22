@@ -21,8 +21,6 @@
 
         }
 
-
-
         function signUp(firstName, lastName, inputUsername, inputEmail, inputPassword) {
             console.log(firstName, lastName, inputUsername, inputEmail, inputPassword);
             var id=0;

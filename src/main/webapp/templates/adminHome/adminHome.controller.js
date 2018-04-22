@@ -7,6 +7,8 @@
         this.search = search;
         this.createUser = createUser;
         this.deleteUser = deleteUser;
+        this.editUser = editUser;
+        this.showAllUser = showAllUser;
 
         function search(cryptoId) {
             $location.url("/search/:cryptoId")
@@ -23,7 +25,18 @@
         }
         init();
 
+        function showAllUser() {
+            $http.get('/api/person')
+                .then(function (response) {
+                    console.log(response.data);
+                    $scope.allUsers = response.data;
+                });
+
+        }
+
         function createUser() {
+            console.log("moving to /createNewUser");
+            $location.url('/createNewUser');
 
         }
 
@@ -36,7 +49,10 @@
 
         }
 
-
+        function editUser(id) {
+            console.log("id for userEditing: '"+id+"'" );
+            $location.url('/editUser/:'+id);
+        }
 
     }
 
