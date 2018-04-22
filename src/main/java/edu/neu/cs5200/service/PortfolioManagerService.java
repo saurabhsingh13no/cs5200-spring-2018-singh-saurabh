@@ -34,6 +34,14 @@ public class PortfolioManagerService {
         return (List<PortfolioManager>) portfolioManagerRepository.findAll();
     }
 
+    @GetMapping("/api/portfolioManager/{portfolioManagerId}/showAllCustomers")
+    public List<Customer> findAllCustomers(
+            @PathVariable("portfolioManagerId") int id) {
+        PortfolioManager portfolioManager = portfolioManagerRepository.findById(id).orElse(null);
+        return portfolioManager.getCustomersOfPortfolioManager();
+    }
+
+
     @GetMapping("/api/portfolioManager/{portfolioManagerId}")
     public PortfolioManager findPortfolioManagerById(@PathVariable("portfolioManagerId") int id) {
         return portfolioManagerRepository.findById(id).orElse(null);

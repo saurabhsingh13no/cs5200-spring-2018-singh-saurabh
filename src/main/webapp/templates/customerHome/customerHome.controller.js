@@ -15,6 +15,7 @@
         this.buyCrypto = buyCrypto;
         this.viewMyPortfolioManagers=viewMyPortfolioManagers;
         this.viewMyOwnedCryptos=viewMyOwnedCryptos;
+        this.createPortfolio=createPortfolio;
 
 
         var customerId;
@@ -71,6 +72,10 @@
             $location.url('/viewMyOwnedCryptos/:'+customerId);
         }
 
+
+        function createPortfolio() {
+
+        }
 
 
     }

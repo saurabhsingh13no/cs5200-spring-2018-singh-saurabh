@@ -100,6 +100,11 @@
                 templateUrl: 'templates/viewMyPortfolioManagers/viewMyPortfolioManagers.html',
                 controller: 'CryptoViewMyPortfolioManagersController',
                 controllerAs: 'model'
+            })
+            .when('/viewAllUserRelatedToPortfolioManager/:id', {
+                templateUrl: 'templates/viewAllUserRelatedToPortfolioManager/viewAllUserRelatedToPortfolioManager.html',
+                controller: 'CryptoViewAllUserRelatedToPortfolioManagerController',
+                controllerAs:'model'
         });
             // .otherwise({redirectTo:'/'});
     }

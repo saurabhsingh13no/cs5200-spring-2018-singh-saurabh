@@ -17,7 +17,7 @@
 
 
         function search(cryptoId) {
-            $location.url("/search/:cryptoId");
+            $location.url("/search/:"+cryptoId);
 
         }
 

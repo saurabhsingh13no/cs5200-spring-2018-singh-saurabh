@@ -45,6 +45,7 @@
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Phone</th>
+            <th scope="col">Show all users under Profile Manager</th>
         </tr>
         </thead>
         <tbody ng-repeat="(index, info) in listOfAllPortfolioManagers">
@@ -56,6 +57,9 @@
             <td>{{info.email}}</td>
             <td>{{info.password}}</td>
             <td>{{info.phone}}</td>
+            <td>
+                <i class="fas fa-search btn btn-primary" ng-click="model.showAllUsers(info)"></i>
+            </td>
         </tbody>
     </table>
 </div>

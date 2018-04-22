@@ -31,54 +31,31 @@
     </div>
 </nav>
 
-<h1>Welcome </h1>
+<h3>List of Users related to the Portfolio Manager</h3>
 
-<button class="btn btn-primary" ng-click="model.assignPortfolioManager()">Assign Portfolio Manager</button>
-<button class="btn btn-primary" ng-click="model.viewMyPortfolioManagers()">My Portfolio Managers</button>
-<button class="btn btn-primary" ng-click="model.viewMyOwnedCryptos()">My owned Cryptos</button>
-<button class="btn btn-primary" ng-click="model.createPortfolio()">Create Portfolio</button>
-
-
-<form class="form-inline my-2 my-lg-0">
-    <input  class="form-control bg-light" placeholder="Search Crypto" ng-model="cryptoId"/>
-    <button class="btn btn-primary invisible" ng-click="model.search(cryptoId)">Search</button>
-</form>
-
-<div class="container">
+<div class="container-fluid">
     <!--<h2>Search</h2>-->
     <table class="table table-hover">
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Market Cap</th>
-            <th scope=""col>Price</th>
-            <!--<th scope=""col>Volume(24h)</th>-->
-            <th scope=""col>Circulating Supply</th>
-            <th scope=""col>Change(24h)</th>
-            <th scope="col">Buy</th>
-            <th scope="col">Details</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Phone</th>
         </tr>
         </thead>
-        <tbody ng-repeat="(index, crypto) in allCryptos">
+        <tbody ng-repeat="(index, info) in listOfAllUsers">
             <td>{{index+1}}</td>
-            <td>{{crypto.id}}</td>
-            <td>{{crypto.market_cap_usd}}</td>
-            <td>{{crypto.price_usd}}</td>
+            <td>{{info.firstName}}</td>
+            <td>{{info.lastName}}</td>
+            <td>{{info.username}}</td>
             <!--<td>{{crypto.24h_volume_usd}}</td>-->
-            <td>{{crypto.available_supply}}</td>
-            <td>{{crypto.percent_change_24h}}</td>
-            <td>
-                <i class="fas fa-plus btn btn-primary" ng-click="model.buyCrypto(crypto)"></i>
-            </td>
-            <td>
-                <i class="fas fa-search btn btn-primary" ng-click="model.showDetails(crypto)"></i>
-            </td>
+            <td>{{info.email}}</td>
+            <td>{{info.password}}</td>
+            <td>{{info.phone}}</td>
         </tbody>
     </table>
 </div>
-</div>
-
-
-
-
