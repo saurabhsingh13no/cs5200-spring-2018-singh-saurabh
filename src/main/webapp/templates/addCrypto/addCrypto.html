@@ -27,29 +27,23 @@
         <form class="form-inline my-2 my-lg-0">
             <input  class="form-control bg-dark text-white" placeholder="search" ng-model="cryptoId"/>
             <button class="btn btn-primary invisible"  ng-click="model.search(cryptoId)">Search</button>
-
         </form>
-        <li class="nav-link">
-            <a class="nav-link"  href="#!SignIn">Sign In</a>
-        </li>
-        <li class="nav-link">
-            <a class="nav-link"  href="#!SignUp">Sign Up</a>
-        </li>
     </div>
 </nav>
 
 <div class="container">
     <!--<h2>Search</h2>-->
-    <table class="table table-hover invisible">
+    <table class="table table-hover">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Market Cap</th>
-            <th scope=""col>Price</th>
+            <th scope="col">Price</th>
             <!--<th scope=""col>Volume(24h)</th>-->
-            <th scope=""col>Circulating Supply</th>
-            <th scope=""col>Change(24h)</th>
+            <th scope="col">Circulating Supply</th>
+            <th scope="col">Change(24h)</th>
+            <th scope="col">Add</th>
         </tr>
         </thead>
         <tbody ng-repeat="(index, crypto) in allCryptos">
@@ -60,29 +54,10 @@
         <!--<td>{{crypto.24h_volume_usd}}</td>-->
         <td>{{crypto.available_supply}}</td>
         <td>{{crypto.percent_change_24h}}</td>
+        <td>
+            <span class="glyphicon glyphicon-plus" style="color: black"></span>
+        </td>
         </tbody>
     </table>
 </div>
-
-
-
-<!--<body class="text-center">-->
-<div class="align-content-md-center">
-    <form class="form-signin">
-        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input id="inputEmail" ng-model="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input id="inputPassword" ng-model="inputPassword" class="form-control" placeholder="Password" required="" type="password">
-        <div class="checkbox mb-3">
-            <label>
-                <input value="remember-me" type="checkbox"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="model.signIn(inputEmail, inputPassword)">Sign in</button>
-    </form>
 </div>
-
-
-<!--</body>-->

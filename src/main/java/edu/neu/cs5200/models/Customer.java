@@ -12,6 +12,7 @@ import java.util.List;
 public class Customer extends Person implements Serializable {
 
     private Date created;
+    private double accountBalance;
 
     @ManyToMany(mappedBy="customersOfPortfolioManager", cascade=CascadeType.ALL)
     @JsonIgnore
@@ -74,6 +75,14 @@ public class Customer extends Person implements Serializable {
     public Date getCreated() {
 
         return created;
+    }
+
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     public void setCreated(Date created) {

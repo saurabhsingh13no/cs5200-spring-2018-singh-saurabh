@@ -18,6 +18,18 @@ public class CustomerService {
     @Autowired
     PortfolioManagerRepository portfolioManagerRepository;
 
+//    @GetMapping("/api/customer/username/{customerId}")
+//    public Customer findCustomerByEmail(@PathVariable("customerId") String id) {
+//
+//        return customerRepository.findCustomerByUsername(id);
+//    }
+
+    @GetMapping("/api/customer/{customerId}")
+    public Customer findCustomerById(@PathVariable("customerId") int id) {
+
+        return customerRepository.findById(id).orElse(null);
+    }
+
     @GetMapping("/api/customer")
     public List<Customer> findAllCustomers(
             @RequestParam(name="username", required = false) String username,
@@ -33,10 +45,7 @@ public class CustomerService {
         return (List<Customer>) customerRepository.findAll();
     }
 
-    @GetMapping("/api/customer/{customerId}")
-    public Customer findCustomerById(@PathVariable("customerId") int id) {
-        return customerRepository.findById(id).orElse(null);
-    }
+
 
     @PostMapping("/api/customer")
     public Customer createCustomer(@RequestBody Customer customer) {

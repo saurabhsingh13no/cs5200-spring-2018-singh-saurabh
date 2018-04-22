@@ -31,7 +31,7 @@
                 controller: 'CryptoDetailsController',
                 controllerAs : 'model'
             })
-            .when('/details/:title ' , {
+            .when('/details/:title' , {
                 templateUrl: 'templates/details/details.html',
                 controller: 'CryptoDetailsController',
                 controllerAs : 'model'
@@ -42,9 +42,25 @@
                 controllerAs : 'model'
             })
             .when('/SignUp', {
-                templateUrl : 'templates/signUp/signUp.html',
-                controller : 'CryptoSignUpController',
-                controllerAs : 'model'
+                templateUrl: 'templates/signUp/signUp.html',
+                controller: 'CryptoSignUpController',
+                controllerAs: 'model'
+            })
+            .when('/customerHome', {
+                templateUrl: 'templates/customerHome/customerHome.html',
+                controller: 'CryptoCustomerHomeController',
+                controllerAs: 'model'
+            })
+            .when('/customerHome/:id', {
+                templateUrl: 'templates/customerHome/customerHome.html',
+                controller: 'CryptoCustomerHomeController',
+                controllerAs: 'model'
+            })
+            .when('/addCrypto/:id', {
+                templateUrl : 'templates/addCrypto/addCrypto.html',
+                controller : 'CryptoAddCryptoController',
+                controllerAs :'model'
+
         });
             // .otherwise({redirectTo:'/'});
     }

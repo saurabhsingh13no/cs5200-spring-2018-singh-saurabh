@@ -9,10 +9,19 @@
         this.search = search;
         this.signUp = signUp;
 
+        function init() {
+            $http.get("/api/customer?username=alice@gmail.com").
+                then(function (response) {console.log(response.data)});
+        }
+        init();
+
+
         function search(cryptoId) {
             $location.url("/search/:cryptoId");
 
         }
+
+
 
         function signUp(firstName, lastName, inputEmail, inputPassword) {
             console.log(firstName, lastName, inputEmail, inputPassword);
@@ -24,17 +33,20 @@
                 email: inputEmail,
                 username:inputEmail,
                 password:inputPassword,
-                created:new Date()
+                created:new Date(),
+                accountBalanace:10000
             };
-            $http.post('/api/customer', personObj);
-
-            $http.get("/api/customer?username="+inputEmail)
-                .then(function (response) {
-                    console.log(response.data)
+            $http.post('/api/customer/', personObj)
+            .then(function() {
+                    $http.get("/api/customer?username="+inputEmail)
+                        .then(function (response) {
+                            console.log(response.data[0]);
+                            id=response.data[0].id;
+                        })
+                        .then(function() {
+                                 $location.url("/customerHome/:"+id);
+                        })
                 });
-
-            // $http.post('/api/customer', {id:id, created:new Date()})
-
         }
     }
 
