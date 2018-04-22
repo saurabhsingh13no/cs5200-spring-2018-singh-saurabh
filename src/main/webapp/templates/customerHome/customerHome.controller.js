@@ -13,6 +13,8 @@
         this.assignPortfolioManager = assignPortfolioManager;
         this.showDetails=showDetails;
         this.buyCrypto = buyCrypto;
+        this.viewMyPortfolioManagers=viewMyPortfolioManagers;
+        this.viewMyOwnedCryptos=viewMyOwnedCryptos;
 
 
         var customerId;
@@ -57,9 +59,17 @@
         function buyCrypto(crypto) {
 
             console.log(crypto);
-            $location.url('/buyCrypto/:'+crypto.id);
+            $location.url('/customer/'+customerId+'/buyCrypto/:'+crypto.id);
         }
 
+        function viewMyPortfolioManagers() {
+            $location.url('/viewMyPortfolioManagers/:'+customerId);
+
+        }
+
+        function viewMyOwnedCryptos() {
+            $location.url('/viewMyOwnedCryptos/:'+customerId);
+        }
 
 
 

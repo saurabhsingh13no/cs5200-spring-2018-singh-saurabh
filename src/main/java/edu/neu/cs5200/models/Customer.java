@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -98,6 +99,11 @@ public class Customer extends Person implements Serializable {
 
     public void assignCryptoCurrency(Cryptocurrency cryptocurrency) {
         this.getCryptosOwned().add(cryptocurrency);
+        List<Cryptocurrency> cryptocurrencyList = new ArrayList<>();
+        cryptocurrencyList.add(cryptocurrency);
+
+        this.setCryptosOwned(cryptocurrencyList);
+
         if (!cryptocurrency.getCustomerOwned().contains(this)) {
             cryptocurrency.getCustomerOwned().add(this);
         }

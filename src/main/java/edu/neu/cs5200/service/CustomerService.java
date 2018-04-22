@@ -50,10 +50,23 @@ public class CustomerService {
         return (List<Customer>) customerRepository.findAll();
     }
 
+    @GetMapping("/api/customer/{customerId}/allCryptos")
+    public List<Cryptocurrency> findAllOwnedCryptos(
+            @PathVariable("customerId") int id ) {
+        Customer customer= customerRepository.findById(id).orElse(null);
+        return customer.getCryptosOwned();
+    }
 
+    @GetMapping("/api/customer/{customerId}/allPortfolioManagers")
+    public List<PortfolioManager> findAllPortfolioManagers(
+            @PathVariable("customerId") int id) {
+        Customer customer = customerRepository.findById(id).orElse(null);
+        return customer.getMangerForCustomers();
+    }
 
     @PostMapping("/api/customer")
     public Customer createCustomer(@RequestBody Customer customer) {
+
         return customerRepository.save(customer);
     }
 

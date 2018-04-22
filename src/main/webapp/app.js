@@ -86,9 +86,19 @@
                 controller: 'CryptoShowDetailsAboutCryptoController',
                 controllerAs: 'model'
             })
-            .when('/buyCrypto/:id', {
+            .when('/customer/:id1/buyCrypto/:id2', {
                 templateUrl: 'templates/buyCrypto/buyCrypto.html',
                 controller: 'CryptoBuyCryptoController',
+                controllerAs: 'model'
+            })
+            .when('/viewMyOwnedCryptos/:id', {
+                templateUrl: 'templates/viewMyOwnedCryptos/viewMyOwnedCryptos.html',
+                controller: 'CryptoViewMyOwnedCryptosController',
+                controllerAs: 'model'
+            })
+            .when('/viewMyPortfolioManagers/:id', {
+                templateUrl: 'templates/viewMyPortfolioManagers/viewMyPortfolioManagers.html',
+                controller: 'CryptoViewMyPortfolioManagersController',
                 controllerAs: 'model'
         });
             // .otherwise({redirectTo:'/'});

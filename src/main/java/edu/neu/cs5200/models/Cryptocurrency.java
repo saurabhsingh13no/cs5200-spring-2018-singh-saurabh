@@ -19,6 +19,7 @@ public class Cryptocurrency implements Serializable {
     private float circulatingSupply=0;
     private String circulatingSupplyBase;
     private float change24h=0;
+    private int amountBuyCrypto=0;
 
     @ManyToOne
     @JsonIgnore
@@ -132,6 +133,14 @@ public class Cryptocurrency implements Serializable {
         this.change24h = change24h;
     }
 
+    public int getAmountBuyCrypto() {
+        return amountBuyCrypto;
+    }
+
+    public void setAmountBuyCrypto(int amountBuyCrypto) {
+        this.amountBuyCrypto = amountBuyCrypto;
+    }
+
     public void set(Cryptocurrency newCryptocurrency) {
         this.name = newCryptocurrency.name!=null ? newCryptocurrency.name : this.name;
         this.priceInUSD = newCryptocurrency.priceInUSD==0 ? newCryptocurrency.priceInUSD : this.priceInUSD;
@@ -140,7 +149,7 @@ public class Cryptocurrency implements Serializable {
         this.circulatingSupply = newCryptocurrency.circulatingSupply==0?newCryptocurrency.circulatingSupply : this.circulatingSupply;
         this.circulatingSupplyBase =  newCryptocurrency.circulatingSupplyBase!=null ? newCryptocurrency.circulatingSupplyBase : this.circulatingSupplyBase;
         this.change24h  = newCryptocurrency.change24h==0? newCryptocurrency.change24h : this.change24h;
-
+        this.amountBuyCrypto = newCryptocurrency.amountBuyCrypto==0? newCryptocurrency.amountBuyCrypto : this.amountBuyCrypto;
 
     }
 }
