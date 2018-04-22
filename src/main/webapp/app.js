@@ -91,6 +91,11 @@
                 controller: 'CryptoBuyCryptoController',
                 controllerAs: 'model'
             })
+            .when('/customer/:id/createPortfolio', {
+                templateUrl : 'templates/createPortfolioForCustomer/createPortfolioForCustomer.html',
+                controller:'CryptoCreatePortfolioForCustomerController',
+                controllerAs:'model'
+            })
             .when('/viewMyOwnedCryptos/:id', {
                 templateUrl: 'templates/viewMyOwnedCryptos/viewMyOwnedCryptos.html',
                 controller: 'CryptoViewMyOwnedCryptosController',

@@ -74,7 +74,7 @@
 
 
         function createPortfolio() {
-
+            $location.url('/customer/'+customerId+'/createPortfolio/');
         }
 
 

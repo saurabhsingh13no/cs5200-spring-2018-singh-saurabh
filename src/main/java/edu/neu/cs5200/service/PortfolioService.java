@@ -31,6 +31,7 @@ public class PortfolioService {
 
     @PostMapping("/api/portfolio")
     public void createPortfolio(@RequestBody Portfolio portfolio) {
+
         portfolioRepository.save(portfolio);
     }
 
