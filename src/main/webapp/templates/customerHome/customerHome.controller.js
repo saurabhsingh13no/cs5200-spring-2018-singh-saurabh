@@ -10,6 +10,7 @@
         this.myName = "saurabh"
         this.customerInfo=null;
         this.addCrypto = addCrypto;
+        this.assignPortfolioManager = assignPortfolioManager;
 
 
         var customerId;
@@ -30,6 +31,10 @@
 
         function addCrypto() {
             $location.url('/addCrypto/:'+customerId);
+        }
+
+        function assignPortfolioManager() {
+            $location.url('/assignPortfolioManager/:'+customerId);
         }
 
 

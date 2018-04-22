@@ -72,9 +72,15 @@
                 controllerAs: 'model'
             })
             .when('/createNewUser', {
-                templateUrl:'templates/createNewUser/createNewUser.html',
+                templateUrl: 'templates/createNewUser/createNewUser.html',
                 controller: 'CryptoCreateNewUserController',
-                controllerAs:'model'
+                controllerAs: 'model'
+            })
+            .when('/assignPortfolioManager/:id', {
+                templateUrl : 'templates/assignPortfolioManager/assignPortfolioManager.html',
+                controller : 'CryptoAssignPortfolioManagerController',
+                controllerAs: 'model'
+
 
         });
             // .otherwise({redirectTo:'/'});

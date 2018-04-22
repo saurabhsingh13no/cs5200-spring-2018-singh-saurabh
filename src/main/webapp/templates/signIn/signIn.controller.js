@@ -22,7 +22,7 @@
                 .then(function (response) {
                     id=response.data[0].id;
                     firstName=response.data[0].firstName;
-                    if (firstName==="saurabh"){
+                    if (response.data[0].username==="admin"){
                         console.log(response.data);
                         $location.url('/adminHome/:'+id);
                     }
