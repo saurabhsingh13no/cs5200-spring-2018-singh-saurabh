@@ -6,6 +6,7 @@
     function CryptoAdminHomeController($scope, $location, $http) {
         this.search = search;
         this.createUser = createUser;
+        this.deleteUser = deleteUser;
 
         function search(cryptoId) {
             $location.url("/search/:cryptoId")
@@ -22,7 +23,16 @@
         }
         init();
 
-        function createUser(user) {
+        function createUser() {
+
+        }
+
+        function deleteUser(id) {
+            console.log("id : "+id);
+            $http.delete('/api/person/'+id)
+                .then(function (response) {
+                    console.log(response.data);
+                })
 
         }
 
