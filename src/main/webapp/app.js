@@ -83,8 +83,13 @@
             })
             .when('/showDetailsAboutCrypto/:id', {
                 templateUrl: 'templates/showDetailsAboutCrypto/showDetailsAboutCrypto.html',
-                controller:'CryptoShowDetailsAboutCryptoController',
-                controllerAs : 'model'
+                controller: 'CryptoShowDetailsAboutCryptoController',
+                controllerAs: 'model'
+            })
+            .when('/buyCrypto/:id', {
+                templateUrl: 'templates/buyCrypto/buyCrypto.html',
+                controller: 'CryptoBuyCryptoController',
+                controllerAs: 'model'
         });
             // .otherwise({redirectTo:'/'});
     }

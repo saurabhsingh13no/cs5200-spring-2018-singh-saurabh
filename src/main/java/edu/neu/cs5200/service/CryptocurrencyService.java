@@ -55,6 +55,7 @@ public class CryptocurrencyService {
 
     @GetMapping("/api/cryptoCurrency/{cryptoCurrencyId}")
     public Cryptocurrency findCryptocurrencyById(@PathVariable("cryptoCurrencyId") int cId) {
+
         return cryptoCurrencyRepository.findById(cId).orElse(null);
     }
 }

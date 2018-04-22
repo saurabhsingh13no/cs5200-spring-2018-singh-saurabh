@@ -1,7 +1,9 @@
 package edu.neu.cs5200.service;
 
+import edu.neu.cs5200.models.Cryptocurrency;
 import edu.neu.cs5200.models.Customer;
 import edu.neu.cs5200.models.PortfolioManager;
+import edu.neu.cs5200.repository.CryptoCurrencyRepository;
 import edu.neu.cs5200.repository.CustomerRepository;
 import edu.neu.cs5200.repository.PortfolioManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class CustomerService {
 
     @Autowired
     PortfolioManagerRepository portfolioManagerRepository;
+
+    @Autowired
+    CryptoCurrencyRepository cryptoCurrencyRepository;
 
 //    @GetMapping("/api/customer/username/{customerId}")
 //    public Customer findCustomerByEmail(@PathVariable("customerId") String id) {
@@ -84,8 +89,15 @@ public class CustomerService {
         customerRepository.save(customer);
     }
 
+    @PostMapping("/api/customer/{cid}/cryptoCurrency/{cryptoName}")
+    public void assignCryptoCurrencyToCustomer(
+            @PathVariable("cid") int cId,
+            @PathVariable("cryptoName") String cryptoName) {
 
-
-
+        Customer customer = customerRepository.findById(cId).orElse(null);
+        List<Cryptocurrency> cryptocurrency = (List<Cryptocurrency>)cryptoCurrencyRepository.findCryptocurrencyByName(cryptoName);
+        customer.assignCryptoCurrency(cryptocurrency.get(0));
+        customerRepository.save(customer);
+    }
 
 }

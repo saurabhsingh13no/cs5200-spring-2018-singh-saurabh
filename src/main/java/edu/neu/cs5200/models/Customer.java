@@ -95,4 +95,11 @@ public class Customer extends Person implements Serializable {
             portfolioManager.getCustomersOfPortfolioManager().add(this);
         }
     }
+
+    public void assignCryptoCurrency(Cryptocurrency cryptocurrency) {
+        this.getCryptosOwned().add(cryptocurrency);
+        if (!cryptocurrency.getCustomerOwned().contains(this)) {
+            cryptocurrency.getCustomerOwned().add(this);
+        }
+    }
 }

@@ -57,6 +57,7 @@
         function buyCrypto(crypto) {
 
             console.log(crypto);
+            $location.url('/buyCrypto/:'+crypto.id);
         }
 
 

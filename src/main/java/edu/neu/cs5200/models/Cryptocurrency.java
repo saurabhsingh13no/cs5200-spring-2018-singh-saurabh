@@ -14,9 +14,9 @@ public class Cryptocurrency implements Serializable {
     private int id;
     private String name;
     private float priceInUSD=0;
-    private int marketCap=0;
-    private int volume24h=0;
-    private int circulatingSupply=0;
+    private float marketCap=0;
+    private float volume24h=0;
+    private float circulatingSupply=0;
     private String circulatingSupplyBase;
     private float change24h=0;
 
@@ -92,27 +92,27 @@ public class Cryptocurrency implements Serializable {
         this.priceInUSD = priceInUSD;
     }
 
-    public int getMarketCap() {
+    public float getMarketCap() {
         return marketCap;
     }
 
-    public void setMarketCap(int marketCap) {
+    public void setMarketCap(float marketCap) {
         this.marketCap = marketCap;
     }
 
-    public int getVolume24h() {
+    public float getVolume24h() {
         return volume24h;
     }
 
-    public void setVolume24h(int volume24h) {
+    public void setVolume24h(float volume24h) {
         this.volume24h = volume24h;
     }
 
-    public int getCirculatingSupply() {
+    public float getCirculatingSupply() {
         return circulatingSupply;
     }
 
-    public void setCirculatingSupply(int circulatingSupply) {
+    public void setCirculatingSupply(float circulatingSupply) {
         this.circulatingSupply = circulatingSupply;
     }
 

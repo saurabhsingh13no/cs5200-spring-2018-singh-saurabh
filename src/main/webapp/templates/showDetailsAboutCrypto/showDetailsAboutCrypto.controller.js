@@ -6,6 +6,7 @@
     function CryptoShowDetailsAboutCryptoController ($scope, $location, $http, $routeParams) {
         var cryptoId;
         var cryptoSymbol;
+        var allCryptos;
 
         function init() {
             $scope.cryptoId = $routeParams.id.substring(1,$routeParams.id.length);
@@ -15,6 +16,8 @@
                 .then(function (response) {
                     console.log(response.data);
                     $scope.allCryptos = response.data;
+                    allCryptos = response.data;
+                    console.log(allCryptos.id);
                     $scope.cryptoSymbol = response.data[0].symbol;
                     cryptoSymbol = response.data[0].symbol;
                     console.log(cryptoSymbol);
