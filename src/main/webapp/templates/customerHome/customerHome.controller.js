@@ -11,11 +11,16 @@
         this.customerInfo=null;
         this.addCrypto = addCrypto;
         this.assignPortfolioManager = assignPortfolioManager;
+        this.showDetails=showDetails;
+        this.buyCrypto = buyCrypto;
 
 
         var customerId;
         function search(cryptoId) {
-            $location.url("/search/:cryptoId");
+            $http.get('https://api.coinmarketcap.com/v1/ticker/' + cryptoId + "/").then(function (response) {
+                console.log(response.data);
+                $scope.allCryptos = response.data;
+            });
         }
 
         function init() {
@@ -26,6 +31,11 @@
                     console.log(customerInfo);
                     console.log(customerInfo.firstName);
                 })
+
+            $http.get('https://api.coinmarketcap.com/v1/ticker/').then(function (response) {
+                console.log(response.data);
+                $scope.allCryptos = response.data;
+            });
         }
         init();
 
@@ -37,6 +47,17 @@
             $location.url('/assignPortfolioManager/:'+customerId);
         }
 
+
+        function showDetails(crypto) {
+            console.log(crypto);
+            $location.url('/showDetailsAboutCrypto/:'+crypto.id);
+
+        }
+
+        function buyCrypto(crypto) {
+
+            console.log(crypto);
+        }
 
 
 

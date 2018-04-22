@@ -77,11 +77,14 @@
                 controllerAs: 'model'
             })
             .when('/assignPortfolioManager/:id', {
-                templateUrl : 'templates/assignPortfolioManager/assignPortfolioManager.html',
-                controller : 'CryptoAssignPortfolioManagerController',
+                templateUrl: 'templates/assignPortfolioManager/assignPortfolioManager.html',
+                controller: 'CryptoAssignPortfolioManagerController',
                 controllerAs: 'model'
-
-
+            })
+            .when('/showDetailsAboutCrypto/:id', {
+                templateUrl: 'templates/showDetailsAboutCrypto/showDetailsAboutCrypto.html',
+                controller:'CryptoShowDetailsAboutCryptoController',
+                controllerAs : 'model'
         });
             // .otherwise({redirectTo:'/'});
     }
