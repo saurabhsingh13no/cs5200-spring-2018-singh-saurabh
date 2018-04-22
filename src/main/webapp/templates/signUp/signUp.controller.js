@@ -23,22 +23,22 @@
 
 
 
-        function signUp(firstName, lastName, inputEmail, inputPassword) {
-            console.log(firstName, lastName, inputEmail, inputPassword);
+        function signUp(firstName, lastName, inputUsername, inputEmail, inputPassword) {
+            console.log(firstName, lastName, inputUsername, inputEmail, inputPassword);
             var id=0;
 
             personObj = {
                 firstName : firstName,
                 lastName: lastName,
                 email: inputEmail,
-                username:inputEmail,
+                username:inputUsername,
                 password:inputPassword,
                 created:new Date(),
                 accountBalanace:10000
             };
             $http.post('/api/customer/', personObj)
             .then(function() {
-                    $http.get("/api/customer?username="+inputEmail)
+                    $http.get("/api/customer?username="+inputUsername)
                         .then(function (response) {
                             console.log(response.data[0]);
                             id=response.data[0].id;

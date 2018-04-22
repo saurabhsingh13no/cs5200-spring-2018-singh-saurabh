@@ -7,6 +7,7 @@ import java.util.Date;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name="dtype")
+@DiscriminatorValue("admin")
 public class Person implements Serializable {
 
     @Id //to set as primary key

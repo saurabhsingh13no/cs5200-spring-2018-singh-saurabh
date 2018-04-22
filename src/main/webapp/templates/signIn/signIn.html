@@ -71,8 +71,8 @@
     <form class="form-signin">
         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input id="inputEmail" ng-model="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input id="inputUsername" ng-model="inputUsername" class="form-control" placeholder="Username" required="" autofocus="" type="text">
         <label for="inputPassword" class="sr-only">Password</label>
         <input id="inputPassword" ng-model="inputPassword" class="form-control" placeholder="Password" required="" type="password">
         <div class="checkbox mb-3">
@@ -80,7 +80,7 @@
                 <input value="remember-me" type="checkbox"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="model.signIn(inputEmail, inputPassword)">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="model.signIn(inputUsername, inputPassword)">Sign in</button>
     </form>
 </div>
 

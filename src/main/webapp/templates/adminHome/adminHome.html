@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input  class="form-control bg-dark text-white" placeholder="search" ng-model="cryptoId"/>
+            <button class="btn btn-primary invisible"  ng-click="model.search(cryptoId)">Search</button>
+
+        </form>
+    </div>
+</nav>
+
+<button class="btn btn-primary"  ng-click="model.createUser(cryptoId)">Create User</button>
+<button class="btn btn-primary"  ng-click="model.abc(cryptoId)">Show All Users</button>
+<button class="btn btn-primary"  ng-click="model.abc(cryptoId)">Search</button>
+<button class="btn btn-primary"  ng-click="model.abc(cryptoId)">Search</button>
+
+
+<div class="container-fluid">
+    <!--<h2>Search</h2>-->
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody ng-repeat="(index, info) in allUsers">
+            <td>{{index+1}}</td>
+            <td>{{info.firstName}}</td>
+            <td>{{info.lastName}}</td>
+            <td>{{info.username}}</td>
+            <!--<td>{{crypto.24h_volume_usd}}</td>-->
+            <td>{{info.email}}</td>
+            <td>{{info.password}}</td>
+            <td>{{info.phone}}</td>
+            <td>
+                <i class="fa fa-minus" ng-model=""></i>
+            </td>
+        </tbody>
+    </table>
+</div>
+
+
+
+

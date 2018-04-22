@@ -71,8 +71,14 @@
         <input id="firstName" ng-model="firstName" class="form-control" placeholder="Alice" required="" autofocus="" type="text">
         <label for="lastName">Last Name</label>
         <input id="lastName" ng-model="lastName" class="form-control" placeholder="Wonderland" required="" autofocus="" type="text">
+
+        <label for="inputUsername">Username</label>
+        <input id="inputUsername" ng-model="inputUsername" class="form-control" placeholder="alice" required="" autofocus="" type="text">
+
         <label for="inputEmail">Email address</label>
         <input id="inputEmail" ng-model="inputEmail" class="form-control" placeholder="alice@gmail.com" required="" autofocus="" type="email">
+
+
         <label for="inputPassword">Password</label>
         <input id="inputPassword" ng-model="inputPassword" class="form-control" placeholder="alice" required="" type="password">
         <div class="checkbox mb-3">
@@ -80,6 +86,6 @@
                 <input value="remember-me" type="checkbox"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" ng-click="model.signUp(firstName, lastName, inputEmail, inputPassword)">Sign up</button>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="model.signUp(firstName, lastName, inputUsername, inputEmail, inputPassword)">Sign up</button>
     </form>
 </div>

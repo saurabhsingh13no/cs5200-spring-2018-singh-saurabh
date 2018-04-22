@@ -57,9 +57,14 @@
                 controllerAs: 'model'
             })
             .when('/addCrypto/:id', {
-                templateUrl : 'templates/addCrypto/addCrypto.html',
-                controller : 'CryptoAddCryptoController',
-                controllerAs :'model'
+                templateUrl: 'templates/addCrypto/addCrypto.html',
+                controller: 'CryptoAddCryptoController',
+                controllerAs: 'model'
+            })
+            .when('/adminHome/:id', {
+                templateUrl: 'templates/adminHome/adminHome.html',
+                controller : 'CryptoAdminHomeController',
+                controllerAs:'model'
 
         });
             // .otherwise({redirectTo:'/'});
