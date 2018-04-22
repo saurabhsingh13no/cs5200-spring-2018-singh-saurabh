@@ -4,15 +4,25 @@
         .controller('CryptoAdminHomeController', CryptoAdminHomeController);
 
     function CryptoAdminHomeController($scope, $location, $http) {
-        this.search = search;
+        this.search1 = search1;
         this.createUser = createUser;
         this.deleteUser = deleteUser;
         this.editUser = editUser;
         this.showAllUser = showAllUser;
+        this.search=search;
 
-        function search(cryptoId) {
+        function search1(cryptoId) {
             $location.url("/search/:cryptoId")
 
+        }
+
+        function search(userName) {
+            console.log("Inside userSearch : "+userName)
+            $http.get('/api/person?username='+userName)
+                .then(function (response) {
+                    console.log(response.data);
+                    $scope.allUsers = response.data;
+                });
         }
 
         function init() {

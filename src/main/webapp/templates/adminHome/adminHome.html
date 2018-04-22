@@ -26,7 +26,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input  class="form-control bg-dark text-white" placeholder="search" ng-model="cryptoId"/>
-            <button class="btn btn-primary invisible"  ng-click="model.search(cryptoId)">Search</button>
+            <button class="btn btn-primary invisible"  ng-click="model.search1(cryptoId)">Search</button>
 
         </form>
     </div>
@@ -34,6 +34,11 @@
 
 <button class="btn btn-primary"  ng-click="model.createUser()">Create User</button>
 <button class="btn btn-primary"  ng-click="model.showAllUser()">Show All Users</button>
+
+<form class="form-inline my-2 my-lg-0">
+    <input  class="form-control bg-light " placeholder="Search user by username" ng-model="userName"/>
+    <button class="btn btn-primary invisible"  ng-click="model.search(userName)">Search</button>
+</form>
 
 <div class="container-fluid">
     <!--<h2>Search</h2>-->
