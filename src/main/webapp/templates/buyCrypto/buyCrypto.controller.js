@@ -26,7 +26,6 @@
                     cryptoSymbol = response.data[0].symbol;
                     console.log(cryptoSymbol);
                 });
-
         }
 
         init();

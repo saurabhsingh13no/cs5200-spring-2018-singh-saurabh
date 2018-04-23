@@ -96,10 +96,20 @@
                 controller:'CryptoCreatePortfolioForCustomerController',
                 controllerAs:'model'
             })
+            .when('/customer/:id/viewMyPortfolios', {
+                templateUrl: 'templates/viewMyPortfolios/viewMyPortfolios.html',
+                controller:'CryptoViewMyPortfoliosController',
+                controllerAs:'model'
+            })
             .when('/viewMyOwnedCryptos/:id', {
                 templateUrl: 'templates/viewMyOwnedCryptos/viewMyOwnedCryptos.html',
                 controller: 'CryptoViewMyOwnedCryptosController',
                 controllerAs: 'model'
+            })
+            .when('/addCryptoToPortfolio/:id', {
+                templateUrl:'templates/addCryptoToPortfolio/addCryptoToPortfolio.html',
+                controller : 'CryptoAddCryptoToPortfolioController',
+                controllerAs : 'model'
             })
             .when('/viewMyPortfolioManagers/:id', {
                 templateUrl: 'templates/viewMyPortfolioManagers/viewMyPortfolioManagers.html',

@@ -1,13 +1,16 @@
 package edu.neu.cs5200.service;
 
+import edu.neu.cs5200.models.Cryptocurrency;
 import edu.neu.cs5200.models.Portfolio;
 import edu.neu.cs5200.models.PortfolioManager;
+import edu.neu.cs5200.repository.CryptoCurrencyRepository;
 import edu.neu.cs5200.repository.PortfolioManagerRepository;
 import edu.neu.cs5200.repository.PortfolioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.convert.Delimiter;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,6 +21,9 @@ public class PortfolioService {
 
     @Autowired
     PortfolioManagerRepository portfolioManagerRepository;
+
+    @Autowired
+    CryptoCurrencyRepository cryptoCurrencyRepository;
 
     @GetMapping("/api/portfolio")
     public List<Portfolio> getAllPortfolios(
@@ -45,6 +51,17 @@ public class PortfolioService {
         portfolio.setManager(portfolioManager);
         portfolioRepository.save(portfolio);
 
+    }
+
+    @PostMapping("/api/portfolio/{pId}/crypto")
+    public void addCryptoToPortfolio(
+            @PathVariable("pId") int pId,
+            @RequestBody Cryptocurrency cryptocurrency) {
+        Portfolio portfolio = portfolioRepository.findById(pId).orElse(null);
+        List<Cryptocurrency> cryptocurrencies = new ArrayList<>();
+        cryptocurrencies.add(cryptocurrency);
+        portfolio.setCryptos(cryptocurrencies);
+        portfolioRepository.save(portfolio);
     }
 
     @DeleteMapping("/api/portfolio")

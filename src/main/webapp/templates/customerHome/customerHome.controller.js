@@ -16,6 +16,8 @@
         this.viewMyPortfolioManagers=viewMyPortfolioManagers;
         this.viewMyOwnedCryptos=viewMyOwnedCryptos;
         this.createPortfolio=createPortfolio;
+        this.viewMyPortfolios=viewMyPortfolios;
+        var customerInfo;
 
 
         var customerId;
@@ -31,6 +33,7 @@
             $http.get("/api/customer/"+customerId)
                 .then(function (response) {
                     customerInfo=response.data;
+                    $scope.customerInfo=response.data;
                     console.log(customerInfo);
                     console.log(customerInfo.firstName);
                 })
@@ -77,6 +80,10 @@
             $location.url('/customer/'+customerId+'/createPortfolio/');
         }
 
+
+        function viewMyPortfolios() {
+            $location.url('/customer/'+customerId+'/viewMyPortfolios')
+        }
 
     }
 

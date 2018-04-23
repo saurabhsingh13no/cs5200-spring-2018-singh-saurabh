@@ -31,19 +31,6 @@
     </div>
 </nav>
 
-<h1>Welcome </h1>
-
-<button class="btn btn-primary" ng-click="model.assignPortfolioManager()">Assign Portfolio Manager</button>
-<button class="btn btn-primary" ng-click="model.viewMyPortfolioManagers()">My Portfolio Managers</button>
-<button class="btn btn-primary" ng-click="model.viewMyOwnedCryptos()">My owned Cryptos</button>
-<button class="btn btn-primary" ng-click="model.createPortfolio()">Create Portfolio</button>
-<button class="btn btn-primary" ng-click="model.viewMyPortfolios()">My Portfolios</button>
-
-
-<form class="form-inline my-2 my-lg-0">
-    <input  class="form-control bg-light" placeholder="Search Crypto" ng-model="cryptoId"/>
-    <button class="btn btn-primary invisible" ng-click="model.search(cryptoId)">Search</button>
-</form>
 
 <div class="container">
     <!--<h2>Search</h2>-->
@@ -52,34 +39,20 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Market Cap</th>
-            <th scope=""col>Price</th>
-            <!--<th scope=""col>Volume(24h)</th>-->
-            <th scope=""col>Circulating Supply</th>
-            <th scope=""col>Change(24h)</th>
-            <th scope="col">Buy</th>
-            <th scope="col">Details</th>
+            <th scope="col">PortfolioManagerId</th>
+            <th scope="col">PortfolioManagerName</th>
+            <th scope="col">Add Crypto</th>
+
         </tr>
         </thead>
-        <tbody ng-repeat="(index, crypto) in allCryptos">
+        <tbody ng-repeat="(index, portfolio) in allPortfolio">
             <td>{{index+1}}</td>
-            <td>{{crypto.id}}</td>
-            <td>{{crypto.market_cap_usd}}</td>
-            <td>{{crypto.price_usd}}</td>
-            <!--<td>{{crypto.24h_volume_usd}}</td>-->
-            <td>{{crypto.available_supply}}</td>
-            <td>{{crypto.percent_change_24h}}</td>
+            <td>{{portfolio.name}}</td>
+            <td>{{portfolio.manager.id}}</td>
+            <td>{{portfolio.manager.firstName}} {{portfolio.manager.lastName}}</td>
             <td>
-                <i class="fas fa-plus btn btn-primary" ng-click="model.buyCrypto(crypto)"></i>
-            </td>
-            <td>
-                <i class="fas fa-search btn btn-primary" ng-click="model.showDetails(crypto)"></i>
+                <i class="fas fa-plus btn btn-primary" ng-click="model.addCrypto(portfolio)"></i>
             </td>
         </tbody>
     </table>
 </div>
-</div>
-
-
-
-
