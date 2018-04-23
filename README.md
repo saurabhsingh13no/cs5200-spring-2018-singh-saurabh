@@ -11,3 +11,15 @@ With the advent of [cryptocurrency trading](https://dl.acm.org/citation.cfm?id=2
 `Online Cryptocurrency Portfolio Management System` is an online tool that allows users to create, manage and keep track of their investments across different exchanges. The tool also provides real time prices of some 1500 cryptocurrencies and information about upcoming Initial Coin Offering (`ICO`) as an added feature. Not only this, users can start and comment on discussions about a particular cryptocurrency thereby making it a great resource to share knowledge.
 
 * For more information : [Click here](https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh/wiki/Project)
+
+
+## You tube video : 
+
+Video on YouTube where I present and demonstrate my project. Video includes the following:
+* [1 minute introduction](https://youtu.be/jj5oaPVqLq8)
+* [1 minute problem statement](https://youtu.be/fqdcDSohOVI)
+* [1 minute solution statement](https://youtu.be/zfWMhoKl4NI)
+* [1 minute architecture and technology stack](https://youtu.be/32d3d4bt888)
+* [1 minute data model](https://youtu.be/xOF0qi3SDYU)
+* [5 to 10 minute demo: briefly show how to use your Web application and highlight the various features](https://youtu.be/HYqbj7W_lrA)
+
