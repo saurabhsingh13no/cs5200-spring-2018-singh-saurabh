@@ -12,7 +12,7 @@ With the advent of [cryptocurrency trading](https://dl.acm.org/citation.cfm?id=2
 
 ## Project Hosted online 
 
-* [Cryptocurrency Management System](http://cyrptomanagesystem-env.us-east-1.elasticbeanstalk.com/)
+* [Cryptocurrency Management System](http://cyrptomanagesystem-env2.us-east-1.elasticbeanstalk.com/)
 * Following users has already been created for you : 
   - alice/alice - Customer (Normal user on the system)
   - bob/bob - Portfolio Manager on the system.
