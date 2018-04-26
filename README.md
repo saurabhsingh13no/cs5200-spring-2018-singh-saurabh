@@ -22,9 +22,9 @@ With the advent of [cryptocurrency trading](https://dl.acm.org/citation.cfm?id=2
 ## How to setup project locally :
 
 * Clone the repository : 
-```
-$ git clone https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh.git
-```
+  ```
+  $ git clone https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh.git
+  ```
   
 * Connect to the Amazon RDS database (used in this project) using username/password in application.properties file using MySQLWorkBench
 * Create admin/admin and alice/alice using below 2 queries
@@ -39,10 +39,6 @@ $ git clone https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh
 * Enjoy exploring Project. Happy Programming :)
 
 
-
-* For more information : [Click here](https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh/wiki/Project)
-
-
 ## You tube video : 
 
 Video on YouTube where I present and demonstrate my project. Video includes the following:
@@ -53,3 +49,6 @@ Video on YouTube where I present and demonstrate my project. Video includes the 
 * [1 minute data model](https://youtu.be/xOF0qi3SDYU)
 * [5 to 10 minute demo: briefly show how to use your Web application and highlight the various features](https://youtu.be/HYqbj7W_lrA)
 
+
+
+* For more information : [Click here](https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh/wiki/Project)
