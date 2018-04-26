@@ -50,5 +50,8 @@ Video on YouTube where I present and demonstrate my project. Video includes the 
 * [5 to 10 minute demo: briefly show how to use your Web application and highlight the various features](https://youtu.be/HYqbj7W_lrA)
 
 
+## More Information
+
+For Design and Testing of the project : 
 
 * For more information : [Click here](https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh/wiki/Project)
