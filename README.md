@@ -8,7 +8,15 @@ With the advent of [cryptocurrency trading](https://dl.acm.org/citation.cfm?id=2
 
 ## Proposed solution
 
-`Online Cryptocurrency Portfolio Management System` is an online tool that allows users to create, manage and keep track of their investments across different exchanges. The tool also provides real time prices of some 1500 cryptocurrencies and information about upcoming Initial Coin Offering (`ICO`) as an added feature. Not only this, users can start and comment on discussions about a particular cryptocurrency thereby making it a great resource to share knowledge.
+`Online Cryptocurrency Portfolio Management System` is an online tool that allows users to create, manage and keep track of their investments across different exchanges. The tool also provides real time prices of some 100 cryptocurrencies. Not only this, users can assign portfolio managers to buy crypto on their behalf.
+
+## Project Hosted online 
+
+* [Cryptocurrency Management System](http://cyrptomanagesystem-env.us-east-1.elasticbeanstalk.com/)
+* Following users has already been created for you : 
+  - alice/alice - Customer (Normal user on the system)
+  - bob/bob - Portfolio Manager on the system.
+  - admin/admin - Admin of the system. Can perform all the CRUD operations
 
 * For more information : [Click here](https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh/wiki/Project)
 
