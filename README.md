@@ -26,6 +26,8 @@ With the advent of [cryptocurrency trading](https://dl.acm.org/citation.cfm?id=2
   $ git clone https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh.git
   ```
   
+* Import the project into IntelliJ just as any other project. Run the `Cs5200Application.java` as java application. Code creates the table in the backend. And starts listning at `127.0.0.1:8080`. Navigate to the url for the UI version.
+  
 * Connect to the Amazon RDS database (used in this project) using username/password in application.properties file using MySQLWorkBench
 * Create admin/admin and alice/alice using below 2 queries
   ```
@@ -34,7 +36,10 @@ With the advent of [cryptocurrency trading](https://dl.acm.org/citation.cfm?id=2
   ```
   insert into customer (email, first_name, last_name, `password`, phone, username) values ('alice@gmail.com', 'Alice', 'Wonderland', 'alice', '8574158310', 'alice');
   ```
+  
 * Create Portfolio Manager - bob/bob by logging in as admin/admin and clicking on create user. Assign role as `Portfolio Manager`.
+
+
 
 * Enjoy exploring Project. Happy Programming :)
 
