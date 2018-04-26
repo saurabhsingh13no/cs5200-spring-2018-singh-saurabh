@@ -17,6 +17,26 @@ With the advent of [cryptocurrency trading](https://dl.acm.org/citation.cfm?id=2
   - alice/alice - Customer (Normal user on the system)
   - bob/bob - Portfolio Manager on the system.
   - admin/admin - Admin of the system. Can perform all the CRUD operations
+  
+  
+  ## How to setup project locally :
+  
+  * Clone the repository : 
+  ```
+  $ git clone https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh.git
+  ```
+  
+  * Connect to the Amazon RDS database (used in this project) using username/password in application.properties file using MySQLWorkBench
+  * Create admin/admin and alice/alice using below 2 queries
+ ```
+ insert into person (dtype, email, first_name, last_name, `password`, phone, username) values ('admin', 'admin@gmail.com', 'admin', 'admin', 'admin', '8574158710', 'admin');
+```
+```
+insert into customer (email, first_name, last_name, `password`, phone, username) values ('alice@gmail.com', 'Alice', 'Wonderland', 'alice', '8574158310', 'alice');
+
+```
+
+
 
 * For more information : [Click here](https://github.com/saurabhsingh13no/cs5200-spring-2018-singh-saurabh/wiki/Project)
 
